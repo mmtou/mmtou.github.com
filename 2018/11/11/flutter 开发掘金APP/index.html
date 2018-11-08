@@ -1,0 +1,172 @@
+
+<!DOCTYPE html>
+<html lang="" class="loading">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Hexo</title>
+
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate">
+    <meta name="keywords" content="mmtou,"> 
+    <meta name="description" content="界面布局
+分解页面appbartabbarcontentbottombar
+
+API对接
+生成 suid API
+
+url: https://suid-generator-api-ms.juejin,"> 
+    <meta name="author" content="John Doe"> 
+    <link rel="alternative" href="atom.xml" title="Hexo" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.png"> 
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+    <link rel="stylesheet" href="/css/diaspora.css">
+</head>
+</html>
+<body class="loading">
+    <div id="loader"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="icon-home image-icon" href="javascript:;"></a>
+    <div title="播放/暂停" class="icon-play"></div>
+    <h3 class="subtitle">flutter 开发掘金APP</h3>
+    <div class="social">
+        <!--<div class="like-icon">-->
+            <!--<a href="javascript:;" class="likeThis active"><span class="icon-like"></span><span class="count">76</span></a>-->
+        <!--</div>-->
+        <div>
+            <div class="share">
+                <a title="获取二维码" class="icon-scan" href="javascript:;"></a>
+            </div>
+            <div id="qr"></div>
+        </div>
+    </div>
+    <div class="scrollbar"></div>
+</div>
+    <div class="section">
+        <div class="article">
+    <div class="main">
+        <h1 class="title">flutter 开发掘金APP</h1>
+        <div class="stuff">
+            <span>十一月 11, 2018</span>
+            
+  <ul class="post-tags-list"><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/flutter/">flutter</a></li></ul>
+
+
+        </div>
+        <div class="content markdown">
+            <h2 id="界面布局"><a href="#界面布局" class="headerlink" title="界面布局"></a>界面布局</h2><ol>
+<li>分解页面<br>appbar<br>tabbar<br>content<br>bottombar</li>
+</ol>
+<h2 id="API对接"><a href="#API对接" class="headerlink" title="API对接"></a>API对接</h2><ol>
+<li><p>生成 suid API</p>
+<ul>
+<li>url: <a href="https://suid-generator-api-ms.juejin.im/v1/gen_suid?src=juejin.im" target="_blank" rel="noopener">https://suid-generator-api-ms.juejin.im/v1/gen_suid?src=juejin.im</a></li>
+<li>method: GET</li>
+<li>response:<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">"d"</span>: <span class="string">"YfuA37VajJvIiJUFqjbJ"</span>,</span><br><span class="line">  <span class="attr">"m"</span>: <span class="string">"ok"</span>,</span><br><span class="line">  <span class="attr">"s"</span>: <span class="number">1</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>首页推荐 API</p>
+</li>
+</ol>
+<ul>
+<li>url: <a href="https://recommender-api-ms.juejin.im/v1/get_recommended_entry?suid=YfuA37VajJvIiJUFqjbJ&amp;ab=welcome_3&amp;src=web" target="_blank" rel="noopener">https://recommender-api-ms.juejin.im/v1/get_recommended_entry?suid=YfuA37VajJvIiJUFqjbJ&amp;ab=welcome_3&amp;src=web</a></li>
+<li>method: GET</li>
+<li>response:<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">"d"</span>: [</span><br><span class="line">    &#123;</span><br><span class="line">      <span class="attr">"collectionCount"</span>: <span class="number">48</span>,</span><br><span class="line">      <span class="attr">"recommenderInfo"</span>: &#123;</span><br><span class="line">        <span class="attr">"filtered"</span>: <span class="literal">true</span>,</span><br><span class="line">        <span class="attr">"source"</span>: <span class="string">"total"</span>,</span><br><span class="line">        <span class="attr">"score"</span>: <span class="number">9994</span></span><br><span class="line">      &#125;,</span><br><span class="line">      <span class="attr">"commentsCount"</span>: <span class="number">8</span>,</span><br><span class="line">      <span class="attr">"gfw"</span>: <span class="literal">false</span>,</span><br><span class="line">      <span class="attr">"entryView"</span>: <span class="string">""</span>,</span><br><span class="line">      <span class="attr">"checkStatus"</span>: <span class="literal">true</span>,</span><br><span class="line">      <span class="attr">"category"</span>: &#123;</span><br><span class="line">        <span class="attr">"ngxCached"</span>: <span class="literal">false</span>,</span><br><span class="line">        <span class="attr">"title"</span>: <span class="string">"android"</span>,</span><br><span class="line">        <span class="attr">"id"</span>: <span class="string">"5562b410e4b00c57d9b94a92"</span>,</span><br><span class="line">        <span class="attr">"name"</span>: <span class="string">"Android"</span>,</span><br><span class="line">        <span class="attr">"ngxCachedTime"</span>: <span class="number">1530895053</span></span><br><span class="line">      &#125;,</span><br><span class="line">      <span class="attr">"objectId"</span>: <span class="string">"5b3f0a0751882519ee7fa9c5"</span>,</span><br><span class="line">      <span class="attr">"subscribersCount"</span>: <span class="number">0</span>,</span><br><span class="line">      <span class="attr">"ngxCachedTime"</span>: <span class="number">1530895053</span>,</span><br><span class="line">      <span class="attr">"verifyStatus"</span>: <span class="literal">true</span>,</span><br><span class="line">      <span class="attr">"tags"</span>: [</span><br><span class="line">        &#123;</span><br><span class="line">          <span class="attr">"title"</span>: <span class="string">"iOS"</span>,</span><br><span class="line">          <span class="attr">"ngxCached"</span>: <span class="literal">true</span>,</span><br><span class="line">          <span class="attr">"ngxCachedTime"</span>: <span class="number">1530894958</span>,</span><br><span class="line">          <span class="attr">"id"</span>: <span class="string">"5597838ae4b08a686ce23139"</span></span><br><span class="line">        &#125;</span><br><span class="line">      ],</span><br><span class="line">      <span class="attr">"verifyCreatedAt"</span>: <span class="string">"2018-07-06T06:28:15.505Z"</span>,</span><br><span class="line">      <span class="attr">"rankIndex"</span>: <span class="number">11.700203032292</span>,</span><br><span class="line">      <span class="attr">"hot"</span>: <span class="literal">true</span>,</span><br><span class="line">      <span class="attr">"type"</span>: <span class="string">"post"</span>,</span><br><span class="line">      <span class="attr">"originalUrl"</span>: <span class="string">"https://juejin.im/post/5b3f098ce51d45199840f4bb"</span>,</span><br><span class="line">      <span class="attr">"buildTime"</span>: <span class="number">1530895036.8646</span>,</span><br><span class="line">      <span class="attr">"lastCommentTime"</span>: <span class="string">"2018-07-06T23:00:05.425Z"</span>,</span><br><span class="line">      <span class="attr">"user"</span>: &#123;</span><br><span class="line">        <span class="attr">"community"</span>: &#123;</span><br><span class="line">          <span class="attr">"weibo"</span>: &#123;</span><br><span class="line">            <span class="attr">"selfDescription"</span>: <span class="string">"工作联系：guicai.gxy@alibaba-inc.com 。我们会第一时间回复"</span>,</span><br><span class="line">            <span class="attr">"uid"</span>: <span class="string">"6515986046"</span>,</span><br><span class="line">            <span class="attr">"blogAddress"</span>: <span class="string">"http://weibo.com/xianyutech"</span>,</span><br><span class="line">            <span class="attr">"username"</span>: <span class="string">"闲鱼技术"</span>,</span><br><span class="line">            <span class="attr">"avatarLarge"</span>: <span class="string">"http://tvax4.sinaimg.cn/crop.0.0.400.400.180/0076YpD8ly8fq8iz4bop2j30b40b40vn.jpg"</span></span><br><span class="line">          &#125;</span><br><span class="line">        &#125;,</span><br><span class="line">        <span class="attr">"collectedEntriesCount"</span>: <span class="number">0</span>,</span><br><span class="line">        <span class="attr">"company"</span>: <span class="string">"阿里巴巴集团"</span>,</span><br><span class="line">        <span class="attr">"ngxCached"</span>: <span class="literal">true</span>,</span><br><span class="line">        <span class="attr">"followeesCount"</span>: <span class="number">1</span>,</span><br><span class="line">        <span class="attr">"role"</span>: <span class="string">"guest"</span>,</span><br><span class="line">        <span class="attr">"jobTitle"</span>: <span class="string">""</span>,</span><br><span class="line">        <span class="attr">"isAuthor"</span>: <span class="literal">false</span>,</span><br><span class="line">        <span class="attr">"postedEntriesCount"</span>: <span class="number">14</span>,</span><br><span class="line">        <span class="attr">"subscribedTagsCount"</span>: <span class="number">4</span>,</span><br><span class="line">        <span class="attr">"objectId"</span>: <span class="string">"5ac2db47f265da2393774122"</span>,</span><br><span class="line">        <span class="attr">"postedPostsCount"</span>: <span class="number">2</span>,</span><br><span class="line">        <span class="attr">"viewedEntriesCount"</span>: <span class="number">33</span>,</span><br><span class="line">        <span class="attr">"username"</span>: <span class="string">"闲鱼技术"</span>,</span><br><span class="line">        <span class="attr">"totalCommentsCount"</span>: <span class="number">39</span>,</span><br><span class="line">        <span class="attr">"ngxCachedTime"</span>: <span class="number">1530895010</span>,</span><br><span class="line">        <span class="attr">"totalCollectionsCount"</span>: <span class="number">444</span>,</span><br><span class="line">        <span class="attr">"avatarLarge"</span>: <span class="string">"https://user-gold-cdn.xitu.io/2018/4/26/163012e08df4aa46?w=400&amp;h=400&amp;f=jpeg&amp;s=117773"</span>,</span><br><span class="line">        <span class="attr">"followersCount"</span>: <span class="number">612</span></span><br><span class="line">      &#125;,</span><br><span class="line">      <span class="attr">"author"</span>: <span class="string">""</span>,</span><br><span class="line">      <span class="attr">"screenshot"</span>: <span class="string">"https://user-gold-cdn.xitu.io/2018/7/6/1646e3e56cca9663?w=820&amp;h=561&amp;f=png&amp;s=91650"</span>,</span><br><span class="line">      <span class="attr">"content"</span>: <span class="string">"闲鱼技术团队于2018年上半年率先引入了Flutter技术尝试实现客户端开发的统一，并成功改造和上线了复杂的商品详情业务。这一过程中，由于原有的iOS和安卓工程都已相当庞大，如何将Flutter无缝桥接到这些大工程并保证开发效率不受影响成为优先要解决的问题。 本文针对项目实践人…"</span>,</span><br><span class="line">      <span class="attr">"original"</span>: <span class="literal">true</span>,</span><br><span class="line">      <span class="attr">"hotIndex"</span>: <span class="number">972.8488</span>,</span><br><span class="line">      <span class="attr">"title"</span>: <span class="string">"Flutter混合工程改造实践"</span>,</span><br><span class="line">      <span class="attr">"createdAt"</span>: <span class="string">"2018-07-06T06:19:51.567Z"</span>,</span><br><span class="line">      <span class="attr">"updatedAt"</span>: <span class="string">"2018-07-06T16:37:16.863Z"</span>,</span><br><span class="line">      <span class="attr">"english"</span>: <span class="literal">false</span>,</span><br><span class="line">      <span class="attr">"isEvent"</span>: <span class="literal">false</span>,</span><br><span class="line">      <span class="attr">"viewsCount"</span>: <span class="number">440</span></span><br><span class="line">    &#125;</span><br><span class="line">  ],</span><br><span class="line">  <span class="attr">"m"</span>: <span class="string">"ok"</span>,</span><br><span class="line">  <span class="attr">"s"</span>: <span class="number">1</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<ol start="3">
+<li>详情API</li>
+</ol>
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+                <ul id="audio-list" style="display:none">
+                    
+                        <li title="0" data-url="http://link.hhtjim.com/163/5146554.mp3"></li>
+                    
+                        <li title="1" data-url="http://link.hhtjim.com/qq/001faIUs4M2zna.mp3"></li>
+                    
+                </ul>
+            
+        </div>
+        
+    <div id="gitalk-container" class="comment link" data-ae="false" data-ci="" data-cs="" data-r="" data-o="" data-a="" data-d="false">查看评论</div>
+
+
+    </div>
+    
+</div>
+
+
+    </div>
+</div>
+</body>
+<script src="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/diaspora.js"></script>
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+<script src="/photoswipe/photoswipe.min.js"></script>
+<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+</html>

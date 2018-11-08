@@ -1,0 +1,193 @@
+
+<!DOCTYPE html>
+<html lang="" class="loading">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Hexo</title>
+
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate">
+    <meta name="keywords" content="mmtou,"> 
+    <meta name="description" content="界面布局
+分解页面appbartabbarcontentbottombar
+
+API对接
+生成 suid API
+
+url: https://suid-generator-api-ms.juejin,"> 
+    <meta name="author" content="John Doe"> 
+    <link rel="alternative" href="atom.xml" title="Hexo" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.png"> 
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+    <link rel="stylesheet" href="/css/diaspora.css">
+</head>
+</html>
+<body class="loading">
+    <div id="loader"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="icon-home image-icon" href="javascript:;"></a>
+    <div title="播放/暂停" class="icon-play"></div>
+    <h3 class="subtitle">Jenkins安装及新建SpringBoot任务</h3>
+    <div class="social">
+        <!--<div class="like-icon">-->
+            <!--<a href="javascript:;" class="likeThis active"><span class="icon-like"></span><span class="count">76</span></a>-->
+        <!--</div>-->
+        <div>
+            <div class="share">
+                <a title="获取二维码" class="icon-scan" href="javascript:;"></a>
+            </div>
+            <div id="qr"></div>
+        </div>
+    </div>
+    <div class="scrollbar"></div>
+</div>
+    <div class="section">
+        <div class="article">
+    <div class="main">
+        <h1 class="title">Jenkins安装及新建SpringBoot任务</h1>
+        <div class="stuff">
+            <span>十二月 15, 2016</span>
+            
+  <ul class="post-tags-list"><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/Jenkins/">Jenkins</a></li><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/SpringBoot/">SpringBoot</a></li><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/基础设施/">基础设施</a></li></ul>
+
+
+        </div>
+        <div class="content markdown">
+            <h2 id="Jenkins安装"><a href="#Jenkins安装" class="headerlink" title="Jenkins安装"></a>Jenkins安装</h2><ol>
+<li><p><a href="https://jenkins.io/" target="_blank" rel="noopener">下载Jenkins</a></p>
+<blockquote>
+<p>请移步<a href="https://jenkins.io/" target="_blank" rel="noopener">Jenkins官网</a>，下载对应系统版本的Jenkins<br>:warning:Jenkins不同的版本对系统的要求，特别是JDK版本，<a href="https://jenkins.io/doc/book/getting-started/installing/" target="_blank" rel="noopener">请参考</a></p>
+</blockquote>
+</li>
+<li><p>如果你下载的jenkins-X.deb文件，则运行<strong>dpkg -i jenkins-X.deb</strong><br>你也可以使用下面方式安装</p>
+<blockquote>
+<p>This is the Debian package repository of Jenkins to automate installation and upgrade. To use this repository, first add the key to your system:<br><code>wget -q -O - https://pkg.jenkins.io/debian-stable/jenkins.io.key | sudo apt-key add -</code><br>Then add the following entry in your /etc/apt/sources.list:<br><code>deb https://pkg.jenkins.io/debian-stable binary/</code><br>Update your local package index, then finally install Jenkins:</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get update</span><br><span class="line">sudo apt-get install jenkins</span><br></pre></td></tr></table></figure>
+</blockquote>
+</li>
+<li><p>修改Jenkins配置<strong>/etc/default/jenkins</strong>，包括port等</p>
+</li>
+<li><p>启动Jenkins /etc/init.d/jenkins</p>
+<blockquote>
+<p>详情请移步 <a href="https://jenkins.io/doc/book/getting-started/installing/" target="_blank" rel="noopener">https://jenkins.io/doc/book/getting-started/installing/</a></p>
+</blockquote>
+</li>
+<li><p>现在你可以通过host:port来访问Jenkins，安装初始化插件、设置用户名密码</p>
+</li>
+</ol>
+<h2 id="常用插件介绍"><a href="#常用插件介绍" class="headerlink" title="常用插件介绍"></a>常用插件介绍</h2><ul>
+<li><a href="https://wiki.jenkins-ci.org/display/JENKINS/Role+Strategy+Plugin" target="_blank" rel="noopener">Role-based Authorization Strategy</a>(角色权限管理)</li>
+<li><a href="https://wiki.jenkins-ci.org/display/JENKINS/Publish+Over+SSH+Plugin" target="_blank" rel="noopener">Publish Over SSH Plugin</a>(SSH工具，远程拷贝文件、远程执行命令等)</li>
+</ul>
+<h2 id="新建SpringBoot任务"><a href="#新建SpringBoot任务" class="headerlink" title="新建SpringBoot任务"></a>新建SpringBoot任务</h2><ol>
+<li>点击新建，键入<strong>Job名字</strong>，选择<strong>构建一个自由风格的软件项目</strong><br><img src="/images/JenkinsNew.png" alt="Jenkins new"></li>
+<li>源码管理配置：gitlab、github等，键入Repository URL、认证信息、分支等<br><img src="/images/JenkinsNewGit.png" alt="Jenkins git config"></li>
+<li>构建配置：<br>添加构建步骤Invoke top-level Maven targets<br>添加构建步骤Execute shell<br><img src="/images/JenkinsNewBuild.png" alt="Jenkins build config"></li>
+<li>保存–&gt;立即构建</li>
+</ol>
+<blockquote>
+<p>其中 <strong>daemonize</strong> 是为了运行一个守护进程，避免Jenkins Job完成后SpringBoot终止，安装daemonize<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">git clone git://github.com/bmc/daemonize.git</span><br><span class="line">cd daemonize</span><br><span class="line">sh configure</span><br><span class="line">make</span><br><span class="line">make install</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<blockquote>
+<p>restart.sh是自己写的脚步，请参考<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span>!/bin/bash</span><br><span class="line"><span class="meta">#</span>set -x</span><br><span class="line">export PATH=$PATH:/data/bin</span><br><span class="line">echo "- " &gt;&gt; /data/logs/restart.log</span><br><span class="line">echo "[`date +%Y-%m-%d:%H:%M:%S`] begin stop $1" &gt;&gt; /data/logs/restart.log</span><br><span class="line">ps -ef |grep "/data/config/" |grep -v grep |grep "$1" | awk '&#123;print $2&#125;' |xargs kill -9 &amp; &gt;&gt; /data/logs/restart.log</span><br><span class="line">echo "[`date +%Y-%m-%d:%H:%M:%S`] end stop $1" &gt;&gt; /data/logs/restart.log</span><br><span class="line">echo "[`date +%Y-%m-%d:%H:%M:%S`] begin start $1" &gt;&gt; /data/logs/restart.log</span><br><span class="line">nohup $1.sh &amp;</span><br><span class="line">echo "[`date +%Y-%m-%d:%H:%M:%S`] end start $1" &gt;&gt; /data/logs/restart.log</span><br><span class="line"><span class="meta">#</span>tail -f /data/logs/$1/$1-starter.log</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<blockquote>
+<p>restart.sh会执行demo.sh($1.sh)，demo.sh如下<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span>!/bin/bash</span><br><span class="line">/usr/bin/java -Dsun.misc.URLClassPath.disableJarChecking=true -Xms2560m -Xmx2560m -Dfile.encoding=UTF-8 -Dspring.config.location=/data/config/demo/application.properties -Xdebug -Xrunjdwp:transport=dt_socket,address=18060,server=y,suspend=n -jar /data/package/demo.war -Dserver.tomcat.uri-encoding=UTF-8 --logging.config=/data/config/demo/logback.xml  --server.port=8060 &amp;</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<blockquote>
+<p>以上脚本里会指定内存的大小、配置文件的位置、logback的位置、debug的端口、server的端口等</p>
+</blockquote>
+<h2 id="坑😫"><a href="#坑😫" class="headerlink" title="坑😫"></a>坑😫</h2><p>问题： jenkins执行脚本时报permission denied<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">// 从Jenkins原来所在的用户组中删除Jenkins</span><br><span class="line">vim /etc/group</span><br><span class="line">// 将Jenkins账号加入到root组中</span><br><span class="line">gpasswd -a jenkins root</span><br><span class="line">// 修改/etc/sysconfig/jenkins文件</span><br><span class="line">vim /etc/sysconfig/jenkins</span><br><span class="line">// 改成</span><br><span class="line">JENKINS_USER="root"</span><br><span class="line">JENKINS_GROUP="root"</span><br><span class="line">// 重启jenkins</span><br><span class="line">service jenkins restart</span><br></pre></td></tr></table></figure></p>
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+                <ul id="audio-list" style="display:none">
+                    
+                        <li title="0" data-url="http://link.hhtjim.com/163/5146554.mp3"></li>
+                    
+                        <li title="1" data-url="http://link.hhtjim.com/qq/001faIUs4M2zna.mp3"></li>
+                    
+                </ul>
+            
+        </div>
+        
+    <div id="gitalk-container" class="comment link" data-ae="false" data-ci="" data-cs="" data-r="" data-o="" data-a="" data-d="false">查看评论</div>
+
+
+    </div>
+    
+</div>
+
+
+    </div>
+</div>
+</body>
+<script src="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/diaspora.js"></script>
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+<script src="/photoswipe/photoswipe.min.js"></script>
+<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+</html>

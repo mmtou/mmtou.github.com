@@ -1,0 +1,183 @@
+
+<!DOCTYPE html>
+<html lang="" class="loading">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Hexo</title>
+
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate">
+    <meta name="keywords" content="mmtou,"> 
+    <meta name="description" content="界面布局
+分解页面appbartabbarcontentbottombar
+
+API对接
+生成 suid API
+
+url: https://suid-generator-api-ms.juejin,"> 
+    <meta name="author" content="John Doe"> 
+    <link rel="alternative" href="atom.xml" title="Hexo" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.png"> 
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+    <link rel="stylesheet" href="/css/diaspora.css">
+</head>
+</html>
+<body class="loading">
+    <div id="loader"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="icon-home image-icon" href="javascript:;"></a>
+    <div title="播放/暂停" class="icon-play"></div>
+    <h3 class="subtitle">GitLab安装及配置</h3>
+    <div class="social">
+        <!--<div class="like-icon">-->
+            <!--<a href="javascript:;" class="likeThis active"><span class="icon-like"></span><span class="count">76</span></a>-->
+        <!--</div>-->
+        <div>
+            <div class="share">
+                <a title="获取二维码" class="icon-scan" href="javascript:;"></a>
+            </div>
+            <div id="qr"></div>
+        </div>
+    </div>
+    <div class="scrollbar"></div>
+</div>
+    <div class="section">
+        <div class="article">
+    <div class="main">
+        <h1 class="title">GitLab安装及配置</h1>
+        <div class="stuff">
+            <span>十二月 14, 2016</span>
+            
+  <ul class="post-tags-list"><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/GitLab/">GitLab</a></li><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/基础设施/">基础设施</a></li></ul>
+
+
+        </div>
+        <div class="content markdown">
+            <h2 id="安装-smile"><a href="#安装-smile" class="headerlink" title="安装:smile:"></a>安装:smile:</h2><ol>
+<li><a href="https://about.gitlab.com/downloads/" target="_blank" rel="noopener">打开gitlab官网下载页面</a></li>
+<li>选择系统及版本</li>
+<li>按照官方教程安装<br><img src="/images/GitLabInstall.png" alt="GitLab install"></li>
+</ol>
+<h2 id="GitLab常用命令-sunglasses"><a href="#GitLab常用命令-sunglasses" class="headerlink" title="GitLab常用命令:sunglasses:"></a>GitLab常用命令:sunglasses:</h2><ul>
+<li>gitlab-ctl status 查看GitLab状态（nginx、postgresql、redis等）</li>
+<li>gitlab-ctl start  启动GitLab</li>
+<li>gitlab-ctl stop 暂停GitLab</li>
+<li>gitlab-ctl restart  重启GitLab</li>
+<li>gitlab-ctl reconfigure  让修改后的配置生效</li>
+</ul>
+<h2 id="配置-sweat"><a href="#配置-sweat" class="headerlink" title="配置:sweat:"></a>配置:sweat:</h2><ul>
+<li><p>GitLab的基本配置在/etc/gitlab/gitlab.rb</p>
+<blockquote>
+<p>例如修改external_url来配置GitLab的域名</p>
+</blockquote>
+</li>
+<li><p>GitLab中还内嵌了好多第三方的应用（ngixn、postgresql、redis等）</p>
+<blockquote>
+<p>例如修改端口，则直接修改nginx的端口  /var/opt/gitlab/nginx/conf/gitlab-http.conf</p>
+</blockquote>
+</li>
+<li><p>其他的自己摸索咯，我只用到这些。。。:joy:</p>
+</li>
+</ul>
+<blockquote>
+<p>上面说的都是社区版的GitLab，GitLab还有Enterprise Edition Starter 和 Enterprise Edition Premium版本。</p>
+</blockquote>
+<blockquote>
+<p>版本请参考： <a href="https://about.gitlab.com/products/" target="_blank" rel="noopener">https://about.gitlab.com/products/</a></p>
+</blockquote>
+<blockquote>
+<p>文档请参考： <a href="http://docs.gitlab.com/ce/README.html" target="_blank" rel="noopener">https://about.gitlab.com/products/</a></p>
+</blockquote>
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+                <ul id="audio-list" style="display:none">
+                    
+                        <li title="0" data-url="http://link.hhtjim.com/163/5146554.mp3"></li>
+                    
+                        <li title="1" data-url="http://link.hhtjim.com/qq/001faIUs4M2zna.mp3"></li>
+                    
+                </ul>
+            
+        </div>
+        
+    <div id="gitalk-container" class="comment link" data-ae="false" data-ci="" data-cs="" data-r="" data-o="" data-a="" data-d="false">查看评论</div>
+
+
+    </div>
+    
+</div>
+
+
+    </div>
+</div>
+</body>
+<script src="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/diaspora.js"></script>
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+<script src="/photoswipe/photoswipe.min.js"></script>
+<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+</html>

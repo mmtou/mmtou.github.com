@@ -1,0 +1,234 @@
+
+<!DOCTYPE html>
+<html lang="" class="loading">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Hexo</title>
+
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate">
+    <meta name="keywords" content="mmtou,"> 
+    <meta name="description" content="界面布局
+分解页面appbartabbarcontentbottombar
+
+API对接
+生成 suid API
+
+url: https://suid-generator-api-ms.juejin,"> 
+    <meta name="author" content="John Doe"> 
+    <link rel="alternative" href="atom.xml" title="Hexo" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.png"> 
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+    <link rel="stylesheet" href="/css/diaspora.css">
+</head>
+</html>
+<body class="loading">
+    <div id="loader"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="icon-home image-icon" href="javascript:;"></a>
+    <div title="播放/暂停" class="icon-play"></div>
+    <h3 class="subtitle">记一次黑苹果的安装</h3>
+    <div class="social">
+        <!--<div class="like-icon">-->
+            <!--<a href="javascript:;" class="likeThis active"><span class="icon-like"></span><span class="count">76</span></a>-->
+        <!--</div>-->
+        <div>
+            <div class="share">
+                <a title="获取二维码" class="icon-scan" href="javascript:;"></a>
+            </div>
+            <div id="qr"></div>
+        </div>
+    </div>
+    <div class="scrollbar"></div>
+</div>
+    <div class="section">
+        <div class="article">
+    <div class="main">
+        <h1 class="title">记一次黑苹果的安装</h1>
+        <div class="stuff">
+            <span>十一月 10, 2018</span>
+            
+  <ul class="post-tags-list"><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/黑苹果/">黑苹果</a></li></ul>
+
+
+        </div>
+        <div class="content markdown">
+            <h2 id="首先贴下我的电脑配置"><a href="#首先贴下我的电脑配置" class="headerlink" title="首先贴下我的电脑配置"></a>首先贴下我的电脑配置</h2><table>
+<thead>
+<tr>
+<th>项目</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>电脑型号</td>
+<td>华硕 All Series 台式机</td>
+</tr>
+<tr>
+<td>处理器</td>
+<td>英特尔 第四代酷睿 i5-4590 @ 3.30GHz</td>
+</tr>
+<tr>
+<td>主板</td>
+<td>华硕B85M-F Plus （英特尔Haswell - Lynx Point）</td>
+</tr>
+<tr>
+<td>内存</td>
+<td>8GB（金士顿 DDR3 1600MHz）</td>
+</tr>
+<tr>
+<td>主磁盘</td>
+<td>台电 256GB A950（248GB/固态硬盘）</td>
+</tr>
+<tr>
+<td>显卡</td>
+<td>Nvidia GeForce GTX 750（2GB/七彩虹）</td>
+</tr>
+<tr>
+<td>显示器</td>
+<td>三星SAM0B65 S24D390（23.5英寸）</td>
+</tr>
+<tr>
+<td>声卡</td>
+<td>瑞昱 ALC887 @ 英特尔 Lynx Point 高保真音频</td>
+</tr>
+<tr>
+<td>网卡</td>
+<td>瑞昱 RTL8168/8111/8112 Gigabit Ethernet Controller / 华硕</td>
+</tr>
+</tbody>
+</table>
+<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><ol>
+<li>一台Mac，为了下载系统镜像</li>
+<li>一个 &gt; 8G的U盘</li>
+</ol>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><ol>
+<li>使用mac电脑下载macOS High Sierra镜像，下载好后会存在/Applications目录下</li>
+<li>插入U盘，使用Mac的磁盘工具把U盘格式化成Mac OS 扩展（日志式）</li>
+<li>创建启动盘<ol>
+<li>下载 <a href="https://www.tonymacx86.com/resources/categories/tonymacx86-downloads.3/" target="_blank" rel="noopener">UniBeast</a>（制作启动盘的工具） 工具并打开（需要英文系统才能使用，打开偏好设置–&gt; 语言与地区–&gt; 把首选语言改成英文，地址改成美国）</li>
+<li>点击 Continue, Continue, Continue, Continue, Agree, 选择刚才的磁盘继续，选择UEFI Boot Mode继续，Continue，Install</li>
+<li>大概10分钟左右完成写入</li>
+<li>下载 <a href="https://www.tonymacx86.com/resources/categories/tonymacx86-downloads.3/" target="_blank" rel="noopener">MultiBeast</a>（安装驱动的工具） 工具放入安装盘</li>
+</ol>
+</li>
+<li>启动PC按F2（不同主板进入BIOS的方式有所不同）进入BIOS</li>
+<li>进入高级设置，修改硬盘为<code>AHCI</code>模式；修改XHCI为<code>Enabled</code>；修改系统为<code>Other OS</code>；保存BIOS设置，重启，选择EFI U盘启动，选择<code>Boot OS X Install from Install macOS High Sierra</code></li>
+<li>这时你会进入macOS安装界面，点击磁盘工具，格式化系统盘为Mac OS 扩展（日志式）</li>
+<li>返回点击安装，选择刚才格式化的磁盘，等待重启安装完成</li>
+<li>进入macOS系统，打开MultiBeast软件，安装相应的驱动，重启</li>
+</ol>
+<h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><ol>
+<li>键盘 和 Mac的原生键盘不一样？<ul>
+<li>点击系统偏好设置–&gt; 键盘–&gt; 设置键盘，win键 是 mac的Command键</li>
+</ul>
+</li>
+<li>无线网卡不能用？之前用的是腾达U9的无线网卡，在黑苹果上无法使用。<ul>
+<li><a href="https://detail.tmall.com/item.htm?id=543736442108" target="_blank" rel="noopener">购买小米随身WiFi</a> (19.9买的)，安装小米随身WiFi驱动，重启就可以无线上网了</li>
+</ul>
+</li>
+<li>小米随身WiFi安装方法<ol>
+<li><a href="https://pan.baidu.com/s/11ktRxeJB9gALFUZEZNfEJA" target="_blank" rel="noopener">下载驱动</a>，密码 <code>ky4q</code></li>
+<li>下载并打开Kext_Utility工具，把RT2870USBWirelessDriver.kext文件拖到工具中</li>
+<li>安装WirelessUtility，重启</li>
+<li>重启后就能看到WiFi的图标了，打开连接wifi就可以愉快的上网了</li>
+</ol>
+</li>
+</ol>
+<blockquote>
+<p>我是参考这个安装的，鸣谢🤝  <a href="https://www.tonymacx86.com/threads/unibeast-install-macos-high-sierra-on-any-supported-intel-based-pc.235474/" target="_blank" rel="noopener">https://www.tonymacx86.com/threads/unibeast-install-macos-high-sierra-on-any-supported-intel-based-pc.235474/</a></p>
+</blockquote>
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+                <ul id="audio-list" style="display:none">
+                    
+                        <li title="0" data-url="http://link.hhtjim.com/163/5146554.mp3"></li>
+                    
+                        <li title="1" data-url="http://link.hhtjim.com/qq/001faIUs4M2zna.mp3"></li>
+                    
+                </ul>
+            
+        </div>
+        
+    <div id="gitalk-container" class="comment link" data-ae="false" data-ci="" data-cs="" data-r="" data-o="" data-a="" data-d="false">查看评论</div>
+
+
+    </div>
+    
+</div>
+
+
+    </div>
+</div>
+</body>
+<script src="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/diaspora.js"></script>
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+<script src="/photoswipe/photoswipe.min.js"></script>
+<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+</html>
